@@ -11,7 +11,7 @@
 >cfg_baud_rate:3
 
 #multi-language(enable:1, disable:0)
->cfg_multiple_language:1
+>cfg_multiple_language:0
 
 #languages setting
 #(simplified Chinese:1; traditional Chinese:2; English:3; Russian:4; Spanish:5). This configuration is valid when "cfg_multiple_language" is disabled.
@@ -25,7 +25,7 @@
 
 #the max target temp of extruder and heated bed
 >cfg_max_sprayer_temperature:270
->cfg_max_hotbed_temperature:120
+>cfg_max_hotbed_temperature:130
 
 #pause position (-1 is invalid; Z-axis is relative position)
 >cfg_XPOS:-1
@@ -41,7 +41,7 @@
 #enable power detecting module(mks 220det:1; mks pwc:0)
 >cfg_insert_det_module:0
 
-#enable auto off after print finish function (no:0; Yes:1)
+#enable auto off after print finish function (no:0; Yes:1）
 >cfg_print_finish_close_Machine:1
 
 #set PB0 signal when use it for sencond nozzle (high level:1; low level:0)
@@ -60,12 +60,12 @@
 #the speed to extrude filament(mm/min)
 >cfg_filament_load_speed:1200
 #the lenght to extrude filament (mm)
->cfg_filament_load_length:200
+>cfg_filament_load_length:800
 
 #the speed to retract filament(mm/min)
 >cfg_filament_unload_speed:1200
 #the lenght to retract filament(mm)
->cfg_filament_unload_length:200
+>cfg_filament_unload_length:800
 
 #It is the minimum temperature for filament change.
 It will auto heat up if the current temp doesn't reach the target.
@@ -86,7 +86,7 @@ It will auto heat up if the current temp doesn't reach the target.
 >cfg_point_number:4
 
 #the coordinates of 5 point on manual leveling
->cfg_point1:0,0
+>cfg_point1:50,50
 >cfg_point2:180,50
 >cfg_point3:180,180
 >cfg_point4:50,180
@@ -108,8 +108,8 @@ It will auto heat up if the current temp doesn't reach the target.
 #wifi model(MKS WIFI TFT:0;  MKS HLK-WIFI:1)
 >cfg_wifi_type:0
 
-#wifi mode(AP:1; STA:2)
->cfg_wifi_mode:1
+#wifi mode(0:sta;1:ap)
+>cfg_wifi_mode:0
 
 #wifi name and password
 >cfg_wifi_ap_name:MKS_wifi
@@ -135,8 +135,8 @@ It will auto heat up if the current temp doesn't reach the target.
 ############## Function Customization #######################################
 
 #user-defined function1 and 2.(display this button .  disable: 0; enable: 1)
->cfg_function_btn1_display:0
->cfg_function_btn2_display:0
+>cfg_function_btn1_display:1
+>cfg_function_btn2_display:1
 
 
 #command of user-defined function
@@ -189,7 +189,7 @@ It will auto heat up if the current temp doesn't reach the target.
 >cfg_state_text_color:0xFFFFFF
 
 #the color of file button
->cfg_filename_background_color:0x000000
+>cfg_filename_background_color:0x494949
 
 #the color of file text
 >cfg_filename_color:0xFFFFFF
@@ -203,5 +203,15 @@ It will auto heat up if the current temp doesn't reach the target.
 #3D effects setting (disable: 0; enable: 1)
 >cfg_BUTTON_3D_effects:0
 
-#屏幕翻转180°(0:不翻转,1:翻转)
+#The screen is flipped 180°(0: no flip, 1: flip)
 >cfg_OVERTURN_180:0
+
+#shield the function of detection power (0:no shield ,1:shield)
+>cfg_disable_PWR_det:0
+
+#shield the function of detection filament (0:no shield ,1:shield)
+>cfg_disable_MT_det:0
+
+#Whether to support the function of dual extruder single nozzle.(0: disable, 1: enable)
+#the extruder number need set to dual.
+>cfg_single_nozzle:1
